@@ -1,9 +1,9 @@
 # Ntrest
 This is a full stack app where you create your interest, post activites, find new interests, and plan out trips or events that you may want to try out. 
  
- ![Lifestyle pic](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
+ ![Ntrest pic](https://cdn.onebauer.media/one/empire-tmdb/films/10201/images/nA7a6uJkrkNEa77043GThE7BgPu.jpg?format=jpg&quality=80&width=960&height=540&ratio=16-9&resize=aspectfill)
 ## Overview
-Have you ever wanted to plan a trip and not know what to do, or wanted to try something new but need some how to and inspiration. Well Ntrest's goal is to be a place where you can get inspirations to try out new things, plan, and share your ntrests. Now you have no excuse wonder what to do with your life now you just have to have to say yes. 
+Have you ever wanted to plan a trip and not know what to do, or wanted to try something new but need some how to and inspiration. Well Ntrest's goal is to be a place where you can get inspirations to try out new things, plan, and share your ntrests. Now you no longer need to get stumbed wondering what to do with your life now you just have to have to descover with Ntrest and say yes. 
 ## Getting Started
 coming soon!!1
 
@@ -15,7 +15,7 @@ coming soon!!!
 
 ### Project build plan
 
-![project building](https://cdn.shopify.com/s/files/1/0070/7032/files/business-plan-template.jpg?v=1559542220&width=1024)
+![project building](https://thumbs.dreamstime.com/b/work-progress-loading-bar-concept-hand-drawing-work-progress-loading-bar-concept-marker-transparent-wipe-board-167678984.jpg)
 
 see how we built this game, in our attached Trello board https://trello.com/b/PMe2FZcK/ntrest
 
@@ -25,8 +25,7 @@ see how we built this game, in our attached Trello board https://trello.com/b/PM
 - https://www.w3schools.com/css/css3_buttons.asp
 - https://designs.ai/colors/
 - https://www.google.com/imghp?hl=en&ogbl
-- https://www.sugarwod.com/
-- https://www.delish.com/cooking/g4798/easy-keto-diet-dinner-recipes/
+
 
 #### Tools used
 -   Html, css, and javaScript 
