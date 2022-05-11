@@ -1,11 +1,13 @@
+import { GetNtrestDetails } from "../services/Ntrest"
 
 
 
-const Categories = () => {
+const Categories = (props) => {
 
 return (
     <div> 
-        map through categories
+        <h1>{props.ntrest.name}</h1>
+        <img className="ntrest_img" src={props.ntrest.ntrest_img} alt="" />
     </div>
 )
 
