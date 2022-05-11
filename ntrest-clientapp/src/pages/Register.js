@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/App.css";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm"
 
 
 const Register = () => {
@@ -8,10 +9,8 @@ const Register = () => {
     let navigate = useNavigate();
 
     const [registerValues, setRegisterValues] = useState({
-      firstName: '',
-      lastName: '',
+      name:'',
       userName: '',
-      about: '',
       email: '',
       picture: '',
       password: '',
@@ -134,6 +133,7 @@ const Register = () => {
           >Submit
         </button>
       </form>
+      <LoginForm />
         </div>
     )
 }
