@@ -20,6 +20,17 @@ export const GetEventDetails = async (id) => {
     }
 }
 
+
+export const GetEventsByNtrestPk = async (ntrestId) => {
+    try {
+      const res = await Client.get(`api/event/ntrest/${ntrestId}`);
+      console.log(res, 'events by ntrest')
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
 export const CreateEvent = async (userId, ntrestId, data) => {
     try{
         const res = await Client.post(`api/event/${userId}/${ntrestId}`, data)

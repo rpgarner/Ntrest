@@ -16,6 +16,7 @@ function App() {
   const [ntrest, setNtrest] = useState([]);
   const [events, setEvents] = useState([]);
   const [event, setEvent] = useState([]);
+  const [eventsByPk, setEventsByPk] = useState([])
 
   console.log(userProfile, "userProfile");
   console.log(user, 'user')
@@ -47,6 +48,10 @@ function App() {
   const selectedNtrestHandler = (selectedNtrest) => {
     setNtrest(selectedNtrest);
   };
+
+  const setEventsByPkHandler = (eventsPk) => {
+    setEventsByPk(eventsPk)
+  }
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -110,6 +115,9 @@ function App() {
                   user={user}
                   toggleAuthenticated={toggleAuthenticated}
                   setUserHandler={setUserHandler}
+                  eventsByPk={eventsByPk}
+                  setEventsByPk={setEventsByPk}
+                  setEventsByPkHandler={setEventsByPkHandler}
                 />
               }
             />
