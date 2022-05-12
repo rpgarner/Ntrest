@@ -18,8 +18,7 @@ const UpdateEvent = (props) => {
 
   let { eventId } = useParams();
   eventId = parseInt(eventId);
-//   let userId = parseInt(props.event.userId);
-//   let ntrestId = parseInt(props.event.ntrestId)
+
 
   const handleEvent = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -116,6 +115,7 @@ const UpdateEvent = (props) => {
         />
         <button className="button">Update Event</button>
       </form>
+      <button onClick={() => navigate('/feed')}>back</button>
   </div>
   )
 };
