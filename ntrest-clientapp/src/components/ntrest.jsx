@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import CreateNtrest from "../components/CreateNtrest";
 import EventsByNtrest from "./EventsByNtrest";
 import { GetEventsByNtrestPk } from "../services/Event";
+import AddEvent from "./AddEvent";
 
 const Ntrest = (props) => {
   let { ntrestId } = useParams();
@@ -42,6 +43,15 @@ const Ntrest = (props) => {
                 eventsByPk={props.eventsByPk}
 
             /> 
+      </div>
+      <div>
+          <AddEvent 
+            ntrest={props.ntrest}
+            user={props.user}
+            setUser={props.setUser}
+            setUserHandler={props.setUserHandler}
+            toggleAuthenticated={props.toggleAuthenticated}
+          /> 
       </div>
     </div>
   );
