@@ -5,10 +5,13 @@ import CreateNtrest from "../components/CreateNtrest";
 import EventsByNtrest from "./EventsByNtrest";
 import { GetEventsByNtrestPk } from "../services/Event";
 import AddEvent from "./AddEvent";
+import { useNavigate } from "react-router-dom";
 
 const Ntrest = (props) => {
   let { ntrestId } = useParams();
   ntrestId = parseInt(ntrestId);
+
+  
 
   const renderNtrest = async () => {
     const currentntrest = await GetNtrestDetails(ntrestId);
@@ -24,6 +27,7 @@ const Ntrest = (props) => {
     renderNtrest();
     renderEventsByPk()
   }, []);
+
 
   return (
     <div>
@@ -41,7 +45,7 @@ const Ntrest = (props) => {
           <h3>things you could do</h3>
             <EventsByNtrest 
                 eventsByPk={props.eventsByPk}
-
+                
             /> 
       </div>
       <div>

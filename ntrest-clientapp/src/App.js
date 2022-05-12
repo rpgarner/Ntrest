@@ -7,6 +7,7 @@ import Feed from "./pages/Feed";
 import Ntrest from "./components/Ntrest";
 import { useState, useEffect } from "react";
 import { CheckSession } from "./services/Auth";
+import EventDetails from "./pages/EventDetails";
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -48,6 +49,10 @@ function App() {
   const selectedNtrestHandler = (selectedNtrest) => {
     setNtrest(selectedNtrest);
   };
+
+  const selectedEventHandler = (selectedEvent) => {
+    setEvent(selectedEvent)
+  }
 
   const setEventsByPkHandler = (eventsPk) => {
     setEventsByPk(eventsPk)
@@ -120,6 +125,15 @@ function App() {
                   setEventsByPkHandler={setEventsByPkHandler}
                 />
               }
+            />
+            <Route 
+            path="event/:eventId"
+            element={
+              <EventDetails 
+                event={event}
+                selectedEventHandler={selectedEventHandler}
+              />
+            }
             />
           </Routes>
         </div>
