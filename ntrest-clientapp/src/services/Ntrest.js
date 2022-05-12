@@ -20,7 +20,7 @@ export const GetNtrestDetails = async (id) => {
     }
 }
 
-export const CreateNtrest = async (userId, data) => {
+export const AddNtrest = async (userId, data) => {
     try{
         const res = await Client.post(`api/ntrest/${userId}`, data)
         return res.data

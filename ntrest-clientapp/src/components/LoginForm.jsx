@@ -1,15 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import { SignInUser } from "../services/Auth";
+import { useState } from "react";
 
-
-const Login = () => {
+const Login = (props) => {
   let navigate = useNavigate();
+
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
 
   const submitData = async (e) => {
     e.preventDefault();
-    // const payload = await SignInUser(formValues);
-    // setFormValues({ email: "", password: "" });
-    // props.setUser(payload);
-    // props.toggleAuthenticated(true);
+    const payload = await SignInUser(formValues);
+    setFormValues({ email: "", password: "" });
+    props.setUser(payload);
+    props.toggleAuthenticated(true);
     navigate("/feed");
   };
 
@@ -20,8 +30,8 @@ const Login = () => {
         <input
           className="formInput"
           type="email"
-          //   value={formValues.email}
-          //   onChange={handleChange}
+          value={formValues.email}
+          onChange={handleChange}
           name="email"
           placeholder="example@example.com"
           required
@@ -29,15 +39,15 @@ const Login = () => {
         <input
           className="formInput"
           type="text-area"
-          //   value={formValues.password}
-          //   onChange={handleChange}
+          value={formValues.password}
+          onChange={handleChange}
           name={"password"}
           placeholder={"password"}
           required
         />
         <button
           className="button"
-          //   disabled={!formValues.email || !formValues.password}
+          disabled={!formValues.email || !formValues.password}
         >
           Submit
         </button>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/App.css";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm"
+import { RegisterUser } from "../services/Auth";
 
 
 const Register = () => {
@@ -12,7 +13,7 @@ const Register = () => {
       name:'',
       userName: '',
       email: '',
-      picture: '',
+      profile_img: '',
       password: '',
       confirmPassword: '',
     })
@@ -23,56 +24,43 @@ const Register = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault()
-    //   await RegisterUser({
-    //     firstName: registerValues.firstName,
-    //     lastName: registerValues.lastName,
-    //     userName: registerValues.userName,
-    //     about: registerValues.about,
-    //     picture: registerValues.picture,
-    //     email: registerValues.email,
-    //     password: registerValues.password
-    //   })
-    //   setRegisterValues({
-    //     firstName: '',
-    //     lastName: '',
-    //     userName: '',
-    //     about: '',
-    //     picture: '',
-    //     email: '',
-    //     password: '',
-    //     confirmPassword: '',
-    //   })
-      navigate('/new-user')
+      await RegisterUser({
+        name: registerValues.name,
+        userName: registerValues.userName,
+        profile_img: registerValues.profile_img,
+        email: registerValues.email,
+        password: registerValues.password
+      })
+      setRegisterValues({
+        name: '',
+        userName: '',
+        profile_img: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      })
+      navigate('/')
     }
 
     return (
         <div>
              <h2 className="login-register">Register</h2>
       <form className="form" 
-    //   onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       >
         <input
           className="formInput"
           type="text"
-        //   onChange={handleChange}
-          name="firstName"
-          placeholder="first name"
-          value={registerValues.firstName}
-          required
-        />
-        <input
-          className="formInput"
-          type="text"
-        //   onChange={handleChange}
-          name="lastName"
-          placeholder="last name"
-          value={registerValues.lastName}
+          onChange={handleChange}
+          name="name"
+          placeholder="name"
+          value={registerValues.name}
           required
         />
         <input
           className="formInput"
           type="username"
-        //   onChange={handleChange}
+          onChange={handleChange}
           name="userName"
           placeholder="username"
           value={registerValues.userName}
@@ -81,25 +69,16 @@ const Register = () => {
         <input
           className="formInput"
           type="text"
-        //   onChange={handleChange}
-          name="picture"
-          placeholder="picture"
-          value={registerValues.picture}
-          required
-        />
-        <input
-          className="about-you formInput"
-          type="text"
-        //   onChange={handleChange}
-          name="about"
-          placeholder="about you!"
-          value={registerValues.about}
+          onChange={handleChange}
+          name="profile_img"
+          placeholder="profile_img"
+          value={registerValues.profile_img}
           required
         />
         <input
           className="formInput"
           type="email"
-        //   onChange={handleChange}
+          onChange={handleChange}
           name="email"
           placeholder="your email"
           value={registerValues.email}
@@ -108,7 +87,7 @@ const Register = () => {
         <input
           className="formInput"
           type="password"
-        //   onChange={handleChange}
+          onChange={handleChange}
           name="password"
           placeholder="password"
           value={registerValues.password}
@@ -117,7 +96,7 @@ const Register = () => {
         <input
           className="formInput"
           type="password"
-        //   onChange={handleChange}
+          onChange={handleChange}
           name="confirmPassword"
           placeholder="confirm password"
           value={registerValues.confirmPassword}
@@ -125,11 +104,11 @@ const Register = () => {
         />
         <button 
           className="button"
-        //   disabled={
-        //     !registerValues.email ||
-        //     (!registerValues.password &&
-        //     registerValues.confirmPassword === registerValues.password)
-        //   }
+          disabled={
+            !registerValues.email ||
+            (!registerValues.password &&
+            registerValues.confirmPassword === registerValues.password)
+          }
           >Submit
         </button>
       </form>

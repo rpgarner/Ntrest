@@ -14,8 +14,11 @@ function App() {
   const [userProfile, setUserProfile] = useState({});
   const [ntrests, setNtrests] = useState([]);
   const [ntrest, setNtrest] = useState([]);
-  const [events, setEvents] = useState([])
-  const [event, setEvent] = useState([])
+  const [events, setEvents] = useState([]);
+  const [event, setEvent] = useState([]);
+
+  console.log(userProfile, "userProfile");
+  console.log(user, 'user')
 
   let userId = user.id;
 
@@ -38,9 +41,12 @@ function App() {
   };
 
   const SetAllEventsHandler = (allEvents) => {
-    setEvents(allEvents)
-  }
+    setEvents(allEvents);
+  };
 
+  const selectedNtrestHandler = (selectedNtrest) => {
+    setNtrest(selectedNtrest);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -52,15 +58,27 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar userProfile={userProfile}
+      user={user} />
       <main>
         <div>
           <Routes>
-            <Route index element={<Welcome />} />
+            <Route
+              index
+              element={
+                <Welcome
+                  user={user}
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                  setUserProfileHandler={setUserProfileHandler}
+                />
+              }
+            />
             <Route
               path="register"
               element={
                 <Register
+                  user={user}
                   setUser={setUser}
                   toggleAuthenticated={toggleAuthenticated}
                   setUserProfileHandler={setUserProfileHandler}
@@ -82,12 +100,16 @@ function App() {
                 />
               }
             />
-            <Route 
+            <Route
               path="feed/categories/:ntrestId"
               element={
-                <Ntrest 
-                ntrests={ntrests}
-                setAllNtrestsHandler={setAllNtrestsHandler}
+                <Ntrest
+                  ntrest={ntrest}
+                  setAllNtrestsHandler={setAllNtrestsHandler}
+                  selectedNtrestHandler={selectedNtrestHandler}
+                  user={user}
+                  toggleAuthenticated={toggleAuthenticated}
+                  setUserHandler={setUserHandler}
                 />
               }
             />

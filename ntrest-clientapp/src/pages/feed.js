@@ -1,58 +1,69 @@
-import Categories from "../components/Categories"
+import Categories from "../components/Categories";
 import { GetAllNtrests } from "../services/Ntrest";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Events from "../components/Events";
 import { GetAllEvents } from "../services/Event";
-import { Navigate, useNavigate } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
+import CreateNtrest from "../components/CreateNtrest";
 
 const Feed = (props) => {
-    let navigate = useNavigate()
-    const showNtrests = async () => {
-        const ntrests = await GetAllNtrests();
-        props.setAllNtrestsHandler(ntrests);
-      };
+  let navigate = useNavigate();
+  const showNtrests = async () => {
+    const ntrests = await GetAllNtrests();
+    props.setAllNtrestsHandler(ntrests);
+  };
 
-      useEffect(() => {
-        showNtrests();
-        showRecentEvents()
-      }, []);
-    
-    const showRecentEvents = async () => {
-        const events = await GetAllEvents()
-        props.SetAllEventsHandler(events)
-    }
+  useEffect(() => {
+    showNtrests();
+    showRecentEvents();
+  }, []);
 
-    const LinkToNtrestDetail = (ntrest) => {
-        Navigate(`feed/categories/${ntrest.id}`)
-    }
+  const showRecentEvents = async () => {
+    const events = await GetAllEvents();
+    props.SetAllEventsHandler(events);
+  };
 
-    return (
+  const LinkToNtrestDetail = (ntrest) => {
+    navigate(`categories/${ntrest.id}`);
+  };
 
-        <div>
-            <div>
-                <h1>Categories</h1>
-                {props.ntrests.map((ntrest) => (
-                  <div 
-                    onClick={() => LinkToNtrestDetail(ntrest)}
-                  >
-                      <Categories ntrest={ntrest} />
-            
-                  </div>  
-                ))}
+  return (
+    <div>
+      <div>
+        <h1>Categories</h1>
+        {props.ntrests.map((ntrest) => {
+          return (
+            <div onClick={() => LinkToNtrestDetail(ntrest)}>
+              <Categories
+                ntrest={ntrest}
+                user={props.user}
+                setUser={props.setUser}
+                setUserHandler={props.setUserHandler}
+                toggleAuthenticated={props.toggleAuthenticated}
+              />
+              
             </div>
-            <div>
-                <h1>Recent Events</h1>
-                {props.events.map((event) => (
-                <div>
-                <Events event={event}/>
-                </div>
-                ))}
-            </div>
-        </div>
+          );
+        })}
+            <CreateNtrest user={props.user}/>
 
-    )
-}
+      </div>
+      <div>
+        <h1>Recent Events</h1>
+        {props.events.map((event) => (
+          <div>
+            <Events
+              event={event}
+              user={props.user}
+              setUser={props.setUser}
+              setUserHandler={props.setUserHandler}
+              toggleAuthenticated={props.toggleAuthenticated}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Feed 
+export default Feed;
