@@ -42,7 +42,7 @@ export const CreateEvent = async (userId, ntrestId, data) => {
 
 export const Updatedevent = async (eventId, data) => {
     try{
-        const res = await Client.put(`api/ntrest/${eventId}`, data)
+        const res = await Client.put(`api/event/${eventId}`, data)
         console.log(res, "updated event")
         return res.data
     } catch (error) {
