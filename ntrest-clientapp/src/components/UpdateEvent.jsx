@@ -18,8 +18,8 @@ const UpdateEvent = (props) => {
 
   let { eventId } = useParams();
   eventId = parseInt(eventId);
-  let userId = parseInt(props.event.userId);
-  let ntrestId = parseInt(props.event.ntrestId)
+//   let userId = parseInt(props.event.userId);
+//   let ntrestId = parseInt(props.event.ntrestId)
 
   const handleEvent = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -27,7 +27,7 @@ const UpdateEvent = (props) => {
 
   const submitData = async (e) => {
     e.preventDefault();
-    await Updatedevent(eventId, userId, ntrestId, {
+    await Updatedevent(eventId, {
         title: formValues.title,
         directions: formValues.directions,
         equipment: formValues.equipment,
@@ -37,7 +37,7 @@ const UpdateEvent = (props) => {
         event_img: formValues.event_img,
         created_by: formValues.created_by,
     });
-    // navigate("/feed");
+    navigate("/feed");
   };
 
   return (

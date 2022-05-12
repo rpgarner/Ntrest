@@ -8,6 +8,7 @@ import Ntrest from "./components/Ntrest";
 import { useState, useEffect } from "react";
 import { CheckSession } from "./services/Auth";
 import EventDetails from "./pages/EventDetails";
+import UpdateEvent from "./components/UpdateEvent";
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -132,6 +133,13 @@ function App() {
               <EventDetails 
                 event={event}
                 selectedEventHandler={selectedEventHandler}
+              />
+            }
+            />
+            <Route 
+            path="updateEvent/:eventId"
+            element={
+              <UpdateEvent 
               />
             }
             />
