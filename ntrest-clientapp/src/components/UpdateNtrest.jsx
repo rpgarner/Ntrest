@@ -79,7 +79,7 @@ const UpdateNtrest= (props) => {
         />
         <button className="register-btn">add</button>
       </form>
-      <button onClick={() => navigate('/feed')}>back</button>
+      <button className="register-btn" onClick={() => navigate('/feed')}>back</button>
   </div>
   )
 };

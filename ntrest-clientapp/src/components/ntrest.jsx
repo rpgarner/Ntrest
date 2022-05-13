@@ -51,7 +51,7 @@ const Ntrest = (props) => {
       <div>
       <button className="register-btn" onClick={() => navToUpdate(ntrestId)}>Update</button>
       </div>
-      <div >
+      <div  >
         <Link to="feed">
           <button className="register-btn" onClick={() => deleteNtrest(ntrestId)}>Delete</button>
         </Link>
@@ -59,13 +59,15 @@ const Ntrest = (props) => {
       </div>
       <div className="categories">
           <h3>things you could do</h3>
+          <div className="events">
+            
             <EventsByNtrest 
                 eventsByPk={props.eventsByPk}
                 
             /> 
       
      
-      <div>
+      <div className="event">
           <AddEvent 
             ntrest={props.ntrest}
             user={props.user}
@@ -73,6 +75,7 @@ const Ntrest = (props) => {
             setUserHandler={props.setUserHandler}
             toggleAuthenticated={props.toggleAuthenticated}
           /> 
+      </div>
       </div>
       </div>
     </div>
