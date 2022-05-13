@@ -32,9 +32,10 @@ const Feed = (props) => {
 }
 
   return (
+    <div>
     <div className="feed">
       <div className="allEvents">
-        <h1>Ntrest</h1>
+        <h1 className="note" >Ntrest</h1>
         <div className="ntrests">
         {props.ntrests.map((ntrest) => {
           return (
@@ -52,14 +53,15 @@ const Feed = (props) => {
         })}
         </div>
             <CreateNtrest user={props.user} />
-
+            </div>
       </div>
+      <div className="feed">
       <div
       className="allEvents">
         <h1>All Events</h1>
-        <div className="events">
+        <div className="ntrests">
         {props.events.map((event) => (
-          <div className="event"  onClick={() => linkToEventDetail(event)}>
+          <div className="ntrest"  onClick={() => linkToEventDetail(event)}>
             <Events
               event={event}
               user={props.user}
@@ -71,7 +73,9 @@ const Feed = (props) => {
         ))}
         </div>
       </div>
+      </div>
     </div>
+   
   );
 };
 

@@ -1,13 +1,14 @@
 .App {
   text-align: center;
   background-color: rgb(1, 47, 47);
-  height: 2000px;
+  max-height: 3000px;
 }
 
 .ntrest_img {
   width: 260px;
   margin-bottom: 7px;
   border-radius: 25px;
+ 
 }
 
 header {
@@ -108,7 +109,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5%;
+  margin:3% 10%;
+  background-image: url('https://media.istockphoto.com/photos/light-natural-wood-background-picture-id1142424263?k=20&m=1142424263&s=612x612&w=0&h=c6TPFiNr64dZfImLUlEicsQFSgTlhtrFwg2ExwnuhcU=');
+  border-left: 10px solid rgba(0, 0, 0, 0.34);
+  border-top: 10px solid rgba(0, 0, 0, 0.34);
+
 }
 
 .categories {
@@ -123,11 +128,35 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.772);
+  /* background-color: rgba(0, 0, 0, 0.255); */
   color: white;
   margin: 20px;
   border-radius: 25px;
-  box-shadow: 3px 3px 9px rgb(135, 176, 227);
+  /* box-shadow: 3px 3px 9px rgb(237, 240, 243); */
+  max-height:  1000px;
+  overflow: scroll;
+  
+}
+
+.ntrests::-webkit-scrollbar-track {
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 2px 0;
+  background-color: #4040402e;
+}
+
+.ntrests::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+.ntrests::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #73727274;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.ntrests::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @keyframes example1 {
@@ -143,13 +172,16 @@ header {
 }
 
 .ntrest {
-  background-color: rgba(80, 76, 76, 0.357);
-  border-radius: 25px;
+  background-color: rgb(12, 12, 12);
+ border: 10px solid white;
+ border-bottom: 50px solid white;
+ transform: rotate(2deg);
   box-shadow: -8px -8px  9px rgb(135, 176, 227);
   animation-name: example1;
   animation-duration: 1.5s;
   margin: 10px 0 10px 0 ;
   width: 280px;
+  height: 320px;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
 }
@@ -159,7 +191,9 @@ header {
   animation: none;
   opacity: .7;
   transition-duration: .3s;
-  width: 290px;
+  transform: rotate(-2deg);
+  cursor: pointer;
+ 
 }
 
 .textArea {
@@ -170,11 +204,13 @@ header {
 
 .allEvents {
   box-shadow: 3px 3px 9px rgba(236, 234, 234, 0.892);
-  width: 95%;
-  border-radius: 25px;
-  margin: 10px;
-  background-image: url('https://media.istockphoto.com/photos/blackboard-or-chalkboard-picture-id892354186?k=20&m=892354186&s=612x612&w=0&h=WoNZU9E7xEgIR1TCoxK-h5p4g58C6VbYOKNJZRIvpJc=');
+  width: 90%;
+  margin: 4%;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuS8ips5nXMUUyeJuilc4f4OVrdr2Y65kLmw&usqp=CAU');
   color: white;
+  border-right: 10px solid rgba(0, 0, 0, 0.555);
+  border-bottom: 10px solid rgba(0, 0, 0, 0.555);
+
 }
 
 .events {
@@ -226,4 +262,32 @@ header {
   width: 70%;
   border-radius: 25px;
   box-shadow: 3px 3px  8px rgb(135, 176, 227);
+}
+
+.pin {
+  margin: 0;
+  text-shadow: -4px -4px 1px rgb(107, 1, 1);
+  font-size: 100px;
+  float: left;
+  transform: rotate(180deg);
+  color: rgb(217, 5, 5);
+
+}
+
+.ntrestName {
+  margin-top: 2px;
+}
+
+.note {
+  /* background-color: tan; */
+  background-image: url('https://cdn.pixabay.com/photo/2013/07/12/15/39/post-it-150262__480.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  margin: 10px 40%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  
+  color: rgba(0, 0, 0, 0.699);
+  font-family: cursive;
+  transform: rotate(5deg);
 }
