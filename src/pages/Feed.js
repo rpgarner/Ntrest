@@ -27,9 +27,13 @@ const Feed = (props) => {
     navigate(`categories/${ntrest.id}`);
   };
 
+  const linkToEventDetail = (event) => {
+    navigate(`/event/${event.id}`)
+}
+
   return (
     <div className="feed">
-      <div className="categories">
+      <div className="allEvents">
         <h1>Ntrest</h1>
         <div className="ntrests">
         {props.ntrests.map((ntrest) => {
@@ -55,7 +59,7 @@ const Feed = (props) => {
         <h1>All Events</h1>
         <div className="events">
         {props.events.map((event) => (
-          <div className="event">
+          <div className="event"  onClick={() => linkToEventDetail(event)}>
             <Events
               event={event}
               user={props.user}

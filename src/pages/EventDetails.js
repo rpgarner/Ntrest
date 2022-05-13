@@ -35,7 +35,7 @@ const EventDetails = (props) => {
 
     return (
 
-        <div className="categories">
+        <div className="allEvents">
             <div>
             <h1>{props.event.title}</h1>
             <p>{props.event.location}</p>

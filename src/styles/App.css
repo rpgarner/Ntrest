@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgb(1, 47, 47);
+  height: 2000px;
 }
 
 .ntrest_img {
@@ -8,11 +10,23 @@
   border-radius: 25px;
 }
 
+header {
+  background-color: black;
+}
+
 .nav_header {
-  background-color: rgb(144, 204, 253);
+  background-image: url('https://media.istockphoto.com/photos/natural-wood-texture-picture-id1145602814?b=1&k=20&m=1145602814&s=170667a&w=0&h=geYq61xvfaKOQCn-RAOWTedracWeaSaTk-daFRw5PA8=');
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: white;
+  /* box-shadow: 0px 9px 7px burlywood; */
+}
+
+.nav_bottom {
+  background-image: url('https://media.istockphoto.com/photos/natural-wood-texture-picture-id1145602814?b=1&k=20&m=1145602814&s=170667a&w=0&h=geYq61xvfaKOQCn-RAOWTedracWeaSaTk-daFRw5PA8=');
+  height: 10px;
+  opacity: .7;
 }
 
 .nav_title {
@@ -22,10 +36,11 @@
   font-family: fantasy;
   font-size: xxx-large;
   margin-right: 30px;
+  text-shadow: 8px 8px 5px black;
 }
 
 .links {
-  color: rgb(0, 0, 0);
+  color: white;
   text-decoration: none;
   font-size: 23px;
   font-weight: bolder;
@@ -33,6 +48,8 @@
   padding: 10px;
   margin: 1px;
   margin-right: 6px;
+  margin-top: 5%;
+  text-shadow: 8px 8px 5px black;
 }
 
 .welcome_page {
@@ -49,7 +66,7 @@
   border-radius: 25px;
   width: 300px;
   background-color: rgba(0, 0, 0, 0.716);
-  box-shadow: 1px 1px 10px black;
+  box-shadow: 1px 1px 10px rgb(239, 236, 236);
   color: white;
 }
 
@@ -110,7 +127,7 @@
   color: white;
   margin: 20px;
   border-radius: 25px;
-  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.363);
+  box-shadow: 3px 3px 9px rgb(135, 176, 227);
 }
 
 @keyframes example1 {
@@ -126,7 +143,7 @@
 }
 
 .ntrest {
-  background-color: rgba(89, 87, 87, 0.677);
+  background-color: rgba(80, 76, 76, 0.357);
   border-radius: 25px;
   box-shadow: -8px -8px  9px rgb(135, 176, 227);
   animation-name: example1;
@@ -142,7 +159,7 @@
   animation: none;
   opacity: .7;
   transition-duration: .3s;
-  width: 300px;
+  width: 290px;
 }
 
 .textArea {
@@ -152,11 +169,11 @@
 }
 
 .allEvents {
-  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.363);
+  box-shadow: 3px 3px 9px rgba(236, 234, 234, 0.892);
   width: 95%;
   border-radius: 25px;
   margin: 10px;
-  background-color:rgba(0, 0, 0, 0.772);
+  background-image: url('https://media.istockphoto.com/photos/blackboard-or-chalkboard-picture-id892354186?k=20&m=892354186&s=612x612&w=0&h=WoNZU9E7xEgIR1TCoxK-h5p4g58C6VbYOKNJZRIvpJc=');
   color: white;
 }
 
@@ -165,25 +182,41 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.512);
+  background-color: rgba(0, 0, 0, 0.772);
   color: white;
   margin: 20px;
   border-radius: 25px;
-  box-shadow: 3px 3px  10px rgb(135, 176, 227);
+  box-shadow: 3px 3px 9px rgba(169, 100, 100, 0.946);
+
+}
+
+@keyframes example2 {
+  0%   {box-shadow: -8px 0px  10px rgba(169, 100, 100, 0.946)}
+  12.5%   {box-shadow: -4px -4px  10px rgba(169, 100, 100, 0.946)}
+  25%  {box-shadow: 0px -8px  10px rgba(169, 100, 100, 0.946)}
+  37.5%   {box-shadow: 4px -4px  10px rgba(169, 100, 100, 0.946)}
+  50%  {box-shadow: 8px 0px  10px rgba(169, 100, 100, 0.946)}
+  62.5%   {box-shadow: 4px 4px  10px rgba(169, 100, 100, 0.946)}
+  75%  {box-shadow: 0px 8px  10px rgba(169, 100, 100, 0.946)}
+  87.5%   {box-shadow: -4px 4px  10px rgba(169, 100, 100, 0.946)}
+  100% {box-shadow: -8px 0px  10px rgba(169, 100, 100, 0.946)}
 }
 
 .event {
-  background-color: rgba(0, 0, 0, 0.677);
+  background-color: rgba(0, 0, 0, 0.765);
   border-radius: 25px;
-  box-shadow: 8px 8px  9px rgb(135, 176, 227);
+  box-shadow: 8px 8px  9px rgba(169, 100, 100, 0.946);
   margin: 10px 0 10px 0 ;
   width: 280px;
-
+ animation-name: example2;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 .event:hover {
   box-shadow: 3px 3px  8px rgb(135, 176, 227);
-  
+  width: 285px;
   opacity: .9;
   transition-duration: .3s;
   
@@ -192,4 +225,5 @@
 .detail_img {
   width: 70%;
   border-radius: 25px;
+  box-shadow: 3px 3px  8px rgb(135, 176, 227);
 }

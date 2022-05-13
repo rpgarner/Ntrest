@@ -41,7 +41,7 @@ const Ntrest = (props) => {
 
   return (
     <div >
-      <div className="categories">
+      <div className="allEvents">
         <h4>{props.ntrest.name}</h4>
         <img className="detail_img" src={props.ntrest.ntrest_img} alt="" />
         <p>difficulty: {props.ntrest.difficulty}</p>
@@ -57,9 +57,9 @@ const Ntrest = (props) => {
         </Link>
       </div>
       </div>
-      <div className="categories">
+      <div className="allEvents">
           <h3>things you could do</h3>
-          <div className="events">
+          <div >
             
             <EventsByNtrest 
                 eventsByPk={props.eventsByPk}
@@ -67,7 +67,7 @@ const Ntrest = (props) => {
             /> 
       
      
-      <div className="event">
+      <div className="events">
           <AddEvent 
             ntrest={props.ntrest}
             user={props.user}
