@@ -47,7 +47,7 @@ const Feed = (props) => {
           );
         })}
         </div>
-            <CreateNtrest user={props.user}/>
+            <CreateNtrest user={props.user} />
 
       </div>
       <div
