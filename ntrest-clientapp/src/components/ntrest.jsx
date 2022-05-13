@@ -40,24 +40,14 @@ const Ntrest = (props) => {
   }
 
   return (
-    <div className="categories">
-      <div>
+    <div >
+      <div className="categories">
         <h4>{props.ntrest.name}</h4>
         <img className="detail_img" src={props.ntrest.ntrest_img} alt="" />
         <p>difficulty: {props.ntrest.difficulty}</p>
         <p>{props.ntrest.category}</p>
         <p>{props.ntrest.description}</p>
-      </div>
-      {/* <div>
-        <CreateNtrest user={props.user} />
-      </div> */}
-      <div>
-          <h3>things you could do</h3>
-            <EventsByNtrest 
-                eventsByPk={props.eventsByPk}
-                
-            /> 
-      </div>
+      
       <div>
       <button className="register-btn" onClick={() => navToUpdate(ntrestId)}>Update</button>
       </div>
@@ -66,6 +56,15 @@ const Ntrest = (props) => {
           <button className="register-btn" onClick={() => deleteNtrest(ntrestId)}>Delete</button>
         </Link>
       </div>
+      </div>
+      <div className="categories">
+          <h3>things you could do</h3>
+            <EventsByNtrest 
+                eventsByPk={props.eventsByPk}
+                
+            /> 
+      
+     
       <div>
           <AddEvent 
             ntrest={props.ntrest}
@@ -74,6 +73,7 @@ const Ntrest = (props) => {
             setUserHandler={props.setUserHandler}
             toggleAuthenticated={props.toggleAuthenticated}
           /> 
+      </div>
       </div>
     </div>
   );

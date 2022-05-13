@@ -6,114 +6,78 @@ const UpdateNtrest= (props) => {
   let navigate = useNavigate();
 
   const [formValues, setFormValues] = useState({
-    title: "",
-    directions: "",
-    equipment: "",
-    location: "",
+    name: "",
+    category: "",
     description: "",
-    cost: 0,
-    event_img: "",
-    created_by: "",
+    difficulty: "",
+    ntrest_img: ""
   });
 
   let { ntrestId } = useParams();
   ntrestId = parseInt(ntrestId);
 
 
-  const handleEvent = (e) => {
+  const handleNtrest = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
   const submitData = async (e) => {
     e.preventDefault();
     await UpdatedNtrest(ntrestId, {
-        title: formValues.title,
-        directions: formValues.directions,
-        equipment: formValues.equipment,
-        location: formValues.location,
+        name: formValues.name,
+        category: formValues.category,
         description: formValues.description,
-        cost: formValues.cost,
-        event_img: formValues.event_img,
-        created_by: formValues.created_by,
+        difficulty: formValues.difficulty,
+        ntrest_img: formValues.ntrest_img
     });
     navigate("/feed");
   };
 
   return (
   <div>
-         <form className="form" onSubmit={submitData}>
+         <form className="createForm" onSubmit={submitData}>
+        <h1 className="add">+</h1>
         <textarea
-          className="EventInputtitle"
+          className="textArea"
           type="text"
-          value={formValues.title}
-          onChange={handleEvent}
-          name="title"
-          placeholder="title"
-       
+          value={formValues.name}
+          onChange={handleNtrest}
+          name={"name"}
+          placeholder={"name"}
         />
         <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
-          value={formValues.directions}
-          onChange={handleEvent}
-          name="directions"
-          placeholder="directions"
-       
+          value={formValues.category}
+          onChange={handleNtrest}
+          name={"category"}
+          placeholder={"category"}
         />
-         <textarea
-          className="EventInput"
-          type="text"
-          value={formValues.equipment}
-          onChange={handleEvent}
-          name="equipment"
-          placeholder="equipment"
-         
-        />
-         <textarea
-          className="EventInput"
-          type="text"
-          value={formValues.location}
-          onChange={handleEvent}
-          name="location"
-          placeholder="location"
-         
-        />
-         <textarea
-          className="EventInput"
+        <textarea
+          className="description textArea"
           type="text"
           value={formValues.description}
-          onChange={handleEvent}
-          name="description"
-          placeholder="description"
-       
+          onChange={handleNtrest}
+          name={"description"}
+          placeholder={"description"}
+        />
+        <textarea
+          className="textArea"
+          type="text"
+          value={formValues.difficulty}
+          onChange={handleNtrest}
+          name={"difficulty"}
+          placeholder={"difficulty"}
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
-          value={formValues.cost}
-          onChange={handleEvent}
-          name="cost"
-          placeholder="cost"
-        
+          value={formValues.ntrest_img}
+          onChange={handleNtrest}
+          name={"ntrest_img"}
+          placeholder={"ntrest_img"}
         />
-         <textarea
-          className="EventInput"
-          type="text"
-          value={formValues.event_img}
-          onChange={handleEvent}
-          name="event_img"
-          placeholder="event_img"
-        />
-         <textarea
-          className="EventInput"
-          type="text"
-          value={formValues.created_by}
-          onChange={handleEvent}
-          name="created_by"
-          placeholder="created_by"
-          
-        />
-        <button className="button">Update Event</button>
+        <button className="register-btn">add</button>
       </form>
       <button onClick={() => navigate('/feed')}>back</button>
   </div>
