@@ -50,7 +50,7 @@ const CreateNtrest = (props) => {
           placeholder={"category"}
         />
         <textarea
-          className="description"
+          className="description textArea"
           type="text"
           value={formValues.description}
           onChange={handleNtrest}
@@ -73,7 +73,7 @@ const CreateNtrest = (props) => {
           name={"ntrest_img"}
           placeholder={"ntrest_img"}
         />
-        <button className="button">Submit</button>
+        <button className="register-btn">add</button>
       </form>
     </div>
   );
