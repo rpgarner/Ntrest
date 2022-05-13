@@ -24,11 +24,11 @@ const Login = (props) => {
   };
 
   return (
-    <div>
-      <h1>Login </h1>
-      <form className="form" onSubmit={submitData}>
+    <div >
+      <h2>Login </h2>
+      <form className="login_form" onSubmit={submitData}>
         <input
-          className="formInput"
+          className="login formInput"
           type="email"
           value={formValues.email}
           onChange={handleChange}
@@ -37,7 +37,7 @@ const Login = (props) => {
           required
         />
         <input
-          className="formInput"
+          className=" login formInput"
           type="text-area"
           value={formValues.password}
           onChange={handleChange}
@@ -46,7 +46,7 @@ const Login = (props) => {
           required
         />
         <button
-          className="button"
+          className="register-btn"
           disabled={!formValues.email || !formValues.password}
         >
           Submit

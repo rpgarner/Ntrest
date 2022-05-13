@@ -32,3 +32,55 @@
   margin: 1px;
   margin-right: 6px;
 }
+
+.welcome_page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+
+.login_register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.716);
+  box-shadow: 1px 1px 10px black;
+  color: white;
+}
+
+.register-btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  color: white;
+  background-color: black;
+  box-shadow: 6px 6px 8px rgb(135, 176, 227);
+  margin: 10px;
+}
+
+.register-btn:hover {
+  background-color: rgba(0, 0, 0, 0.472);
+  color: black;
+  box-shadow: 2px 2px 5px rgb(135, 176, 227);
+  transition-duration: .3s;
+}
+
+.login_form { 
+  margin: 10px;
+}
+
+.login { 
+  margin: 10px;
+  width: 200px;
+  border-radius: 25px;
+  height: 30px;
+  text-align: center;
+}
+
+.login:hover {
+  background-color: rgb(123, 53, 53);
+  color: white;
+}
