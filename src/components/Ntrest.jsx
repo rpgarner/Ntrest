@@ -41,13 +41,22 @@ const Ntrest = (props) => {
 
   return (
     <div >
+      <div className="feed">
       <div className="allEvents">
-        <h4>{props.ntrest.name}</h4>
-        <img className="detail_img" src={props.ntrest.ntrest_img} alt="" />
-        <p>difficulty: {props.ntrest.difficulty}</p>
-        <p>{props.ntrest.category}</p>
-        <p>{props.ntrest.description}</p>
-      
+        <div className="paper">
+        <h2 className="detailName">{props.ntrest.name}</h2>
+        <div className="paperDetails">
+        <div className="ntrest">
+        <h1 className="pin">.</h1> 
+        <h1 className="ntrestName">Fly Fishing</h1>
+        <img className="ntrest_img" src={props.ntrest.ntrest_img} alt="" />
+        </div>
+        <div className="dets">
+        <p className="p">difficulty: {props.ntrest.difficulty}</p>
+        <p className="p">{props.ntrest.category}</p>
+        <p className="p">{props.ntrest.description}</p>
+        </div>
+        </div>
       <div>
       <button className="register-btn" onClick={() => navToUpdate(ntrestId)}>Update</button>
       </div>
@@ -57,8 +66,11 @@ const Ntrest = (props) => {
         </Link>
       </div>
       </div>
+      </div>
+      </div>
+      <div className="feed">
       <div className="allEvents">
-          <h3>things you could do</h3>
+          <h1 className="note">To Do</h1>
           <div >
             
             <EventsByNtrest 
@@ -67,7 +79,7 @@ const Ntrest = (props) => {
             /> 
       
      
-      <div className="events">
+      <div >
           <AddEvent 
             ntrest={props.ntrest}
             user={props.user}
@@ -75,6 +87,7 @@ const Ntrest = (props) => {
             setUserHandler={props.setUserHandler}
             toggleAuthenticated={props.toggleAuthenticated}
           /> 
+      </div>
       </div>
       </div>
       </div>

@@ -31,8 +31,9 @@ const CreateNtrest = (props) => {
  
     return (
     <div>
+     
       <form className="createForm" onSubmit={submitData}>
-        <h1 className="add">+</h1>
+        <h1 className="note" >+</h1>
         <textarea
           className="textArea"
           type="text"

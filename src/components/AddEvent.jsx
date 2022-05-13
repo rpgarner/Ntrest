@@ -37,6 +37,7 @@ const AddEvent = (props) => {
   return (
     <div>
       <form className="form" onSubmit={submitData}>
+      <h1 className="note" >+</h1>
         <textarea
           className="textArea"
           type="text"

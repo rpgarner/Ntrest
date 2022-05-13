@@ -58,7 +58,7 @@ const Feed = (props) => {
       <div className="feed">
       <div
       className="allEvents">
-        <h1>All Events</h1>
+        <h1 className="note">All Events</h1>
         <div className="ntrests">
         {props.events.map((event) => (
           <div className="ntrest"  onClick={() => linkToEventDetail(event)}>
