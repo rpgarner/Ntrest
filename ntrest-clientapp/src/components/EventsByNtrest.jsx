@@ -12,13 +12,13 @@ const EventsByNtrest = (props) => {
 
     return ( 
 
-        <div>
+        <div className="event">
             {props.eventsByPk.map((event) => {
                 return (
                     <div onClick={() => linkToEventDetail(event)}>
                         
                     <h4>{event.title}</h4>
-                    <img src={event.event_img} alt="" />
+                    <img className='ntrest_img' src={event.event_img} alt="" />
                     </div>
                 )
             })}

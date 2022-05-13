@@ -30,7 +30,7 @@ const Feed = (props) => {
   return (
     <div className="feed">
       <div className="categories">
-        <h1>Categories</h1>
+        <h1>Ntrest</h1>
         <div className="ntrests">
         {props.ntrests.map((ntrest) => {
           return (
@@ -50,10 +50,12 @@ const Feed = (props) => {
             <CreateNtrest user={props.user}/>
 
       </div>
-      <div>
-        <h1>Recent Events</h1>
+      <div
+      className="allEvents">
+        <h1>All Events</h1>
+        <div className="events">
         {props.events.map((event) => (
-          <div>
+          <div className="event">
             <Events
               event={event}
               user={props.user}
@@ -63,6 +65,7 @@ const Feed = (props) => {
             />
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

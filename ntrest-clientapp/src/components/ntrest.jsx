@@ -6,12 +6,14 @@ import EventsByNtrest from "./EventsByNtrest";
 import { GetEventsByNtrestPk } from "../services/Event";
 import AddEvent from "./AddEvent";
 import { useNavigate } from "react-router-dom";
+import { DeleteNtrest } from "../services/Ntrest";
+import { Link } from "react-router-dom";
 
 const Ntrest = (props) => {
   let { ntrestId } = useParams();
   ntrestId = parseInt(ntrestId);
 
-  
+  let navigate = useNavigate()
 
   const renderNtrest = async () => {
     const currentntrest = await GetNtrestDetails(ntrestId);
@@ -28,25 +30,41 @@ const Ntrest = (props) => {
     renderEventsByPk()
   }, []);
 
+  const navToUpdate = (eventId) => {
+    navigate(`/updateNtrest/${ntrestId}`)
+  }
+
+  const deleteNtrest = async (eventId) => {
+    await DeleteNtrest(eventId)
+    navigate("/feed")
+  }
 
   return (
-    <div>
+    <div className="categories">
       <div>
         <h4>{props.ntrest.name}</h4>
-        <img src={props.ntrest.ntrest_img} alt="" />
+        <img className="detail_img" src={props.ntrest.ntrest_img} alt="" />
         <p>difficulty: {props.ntrest.difficulty}</p>
         <p>{props.ntrest.category}</p>
         <p>{props.ntrest.description}</p>
       </div>
-      <div>
+      {/* <div>
         <CreateNtrest user={props.user} />
-      </div>
+      </div> */}
       <div>
           <h3>things you could do</h3>
             <EventsByNtrest 
                 eventsByPk={props.eventsByPk}
                 
             /> 
+      </div>
+      <div>
+      <button className="register-btn" onClick={() => navToUpdate(ntrestId)}>Update</button>
+      </div>
+      <div >
+        <Link to="feed">
+          <button className="register-btn" onClick={() => deleteNtrest(ntrestId)}>Delete</button>
+        </Link>
       </div>
       <div>
           <AddEvent 

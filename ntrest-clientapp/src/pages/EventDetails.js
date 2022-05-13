@@ -35,18 +35,23 @@ const EventDetails = (props) => {
 
     return (
 
-        <div>
+        <div className="categories">
             <div>
             <h1>{props.event.title}</h1>
-            <img src={props.event.event_img}></img>
+            <p>{props.event.location}</p>
+            <img className="detail_img" src={props.event.event_img}></img>
+            <p>{props.event.directions}</p>
+            <p>{props.event.description}</p>
+            <p>equipment: {props.event.equipment}</p>
+            <p>by: {props.event.created_by}</p>
             </div>
             <div>
             <div>
-          <button className="button" onClick={() => navToUpdate(eventId)}>Update</button>
+          <button className="register-btn" onClick={() => navToUpdate(eventId)}>Update</button>
       </div>
       <div >
         <Link to="feed">
-          <button className="button" onClick={() => deleteEvent(eventId)}>Delete</button>
+          <button className="register-btn" onClick={() => deleteEvent(eventId)}>Delete</button>
         </Link>
       </div>
             </div>

@@ -38,7 +38,7 @@ const AddEvent = (props) => {
     <div>
       <form className="form" onSubmit={submitData}>
         <textarea
-          className="EventInputtitle"
+          className="textArea"
           type="text"
           value={formValues.title}
           onChange={handleEvent}
@@ -47,7 +47,7 @@ const AddEvent = (props) => {
           required
         />
         <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.directions}
           onChange={handleEvent}
@@ -56,7 +56,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.equipment}
           onChange={handleEvent}
@@ -65,7 +65,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.location}
           onChange={handleEvent}
@@ -74,7 +74,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.description}
           onChange={handleEvent}
@@ -83,7 +83,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.cost}
           onChange={handleEvent}
@@ -92,7 +92,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.event_img}
           onChange={handleEvent}
@@ -101,7 +101,7 @@ const AddEvent = (props) => {
           required
         />
          <textarea
-          className="EventInput"
+          className="textArea"
           type="text"
           value={formValues.created_by}
           onChange={handleEvent}
@@ -109,7 +109,7 @@ const AddEvent = (props) => {
           placeholder="created_by"
           required
         />
-        <button className="button">add comment</button>
+        <button className="register-btn">add</button>
       </form>
     </div>
   );

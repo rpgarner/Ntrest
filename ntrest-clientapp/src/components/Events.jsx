@@ -4,9 +4,9 @@
 const Events = (props) => {
 
 return (
-    <div>
+    <div >
         <h4>{props.event.title}</h4>
-        <img src={props.event.event_img} alt="" />
+        <img className='ntrest_img' src={props.event.event_img} alt="" />
     </div>
 )
 

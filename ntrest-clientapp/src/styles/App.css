@@ -98,6 +98,7 @@
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.363);
   width: 95%;
   border-radius: 25px;
+  margin: 10px;
 }
 
 .ntrests {
@@ -146,4 +147,49 @@
 
 .textArea {
   margin: 6px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.363);
+}
+
+.allEvents {
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.363);
+  width: 95%;
+  border-radius: 25px;
+  margin: 10px;
+  background-color:rgba(0, 0, 0, 0.772);
+  color: white;
+}
+
+.events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.512);
+  color: white;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 3px 3px  10px rgb(135, 176, 227);
+}
+
+.event {
+  background-color: rgba(0, 0, 0, 0.677);
+  border-radius: 25px;
+  box-shadow: 8px 8px  9px rgb(135, 176, 227);
+  margin: 10px 0 10px 0 ;
+  width: 280px;
+
+}
+
+.event:hover {
+  box-shadow: 3px 3px  8px rgb(135, 176, 227);
+  
+  opacity: .9;
+  transition-duration: .3s;
+  
+}
+
+.detail_img {
+  width: 70%;
+  border-radius: 25px;
 }

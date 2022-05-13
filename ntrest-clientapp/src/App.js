@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { CheckSession } from "./services/Auth";
 import EventDetails from "./pages/EventDetails";
 import UpdateEvent from "./components/UpdateEvent";
+import UpdateNtrest from "./components/UpdateNtrest";
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -140,6 +141,13 @@ function App() {
             path="updateEvent/:eventId"
             element={
               <UpdateEvent 
+              />
+            }
+            />
+             <Route 
+            path="updateNtrest/:ntrestId"
+            element={
+              <UpdateNtrest 
               />
             }
             />
