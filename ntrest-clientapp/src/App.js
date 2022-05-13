@@ -76,7 +76,7 @@ function App() {
         <div>
           <Routes>
             <Route
-              index
+              path='/'
               element={
                 <Welcome
                   user={user}
