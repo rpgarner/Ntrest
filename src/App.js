@@ -10,6 +10,8 @@ import { CheckSession } from "./services/Auth";
 import EventDetails from "./pages/EventDetails";
 import UpdateEvent from "./components/UpdateEvent";
 import UpdateNtrest from "./components/UpdateNtrest";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -149,6 +151,18 @@ function App() {
             element={
               <UpdateNtrest 
               />
+            }
+            />
+            <Route 
+            path="mycart"
+            element={
+              <Cart />
+            }
+            />
+            <Route 
+            path="profile"
+            element={
+              <Cart />
             }
             />
           </Routes>
