@@ -34,16 +34,24 @@ const EventDetails = (props) => {
   }
 
     return (
-
+        <div className="feed">
         <div className="allEvents">
-            <div>
+            <div className="paper">
             <h1>{props.event.title}</h1>
-            <p>{props.event.location}</p>
-            <img className="detail_img" src={props.event.event_img}></img>
-            <p>{props.event.directions}</p>
-            <p>{props.event.description}</p>
-            <p>equipment: {props.event.equipment}</p>
-            <p>by: {props.event.created_by}</p>
+            <div className="paperDetails">
+            <div className="ntrest">
+            <h1 className="pin">.</h1> 
+              <h1>{props.event.title}</h1>
+            <img className="ntrest_img" src={props.event.event_img}></img>
+            </div>
+            <div className="dets">
+            <p className="p">{props.event.location}</p>
+            <p className="p">{props.event.directions}</p>
+            <p className="p">{props.event.description}</p>
+            <p className="p">equipment: {props.event.equipment}</p>
+            <p className="p">by: {props.event.created_by}</p>
+            </div>
+            </div>
             </div>
             <div>
             <div>
@@ -55,6 +63,7 @@ const EventDetails = (props) => {
         </Link>
       </div>
             </div>
+        </div>
         </div>
 
     )
