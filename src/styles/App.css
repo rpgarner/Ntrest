@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(1, 47, 47);
-  max-height: 3000px;
+  height: 2500px;
 }
 
 .ntrest_img {
@@ -21,13 +21,14 @@ header {
   flex-direction: row;
   justify-content: space-between;
   color: white;
-  /* box-shadow: 0px 9px 7px burlywood; */
+  
 }
 
 .nav_bottom {
   background-image: url('https://media.istockphoto.com/photos/natural-wood-texture-picture-id1145602814?b=1&k=20&m=1145602814&s=170667a&w=0&h=geYq61xvfaKOQCn-RAOWTedracWeaSaTk-daFRw5PA8=');
   height: 10px;
   opacity: .7;
+  box-shadow: 10px 10px 3px rgba(21, 21, 21, 0.773);
 }
 
 .nav_title {
@@ -113,7 +114,7 @@ header {
   background-image: url('https://media.istockphoto.com/photos/light-natural-wood-background-picture-id1142424263?k=20&m=1142424263&s=612x612&w=0&h=c6TPFiNr64dZfImLUlEicsQFSgTlhtrFwg2ExwnuhcU=');
   border-left: 10px solid rgba(0, 0, 0, 0.34);
   border-top: 10px solid rgba(0, 0, 0, 0.34);
-
+  box-shadow: 10px 10px 8px black;
 }
 
 .categories {
@@ -203,13 +204,13 @@ header {
 }
 
 .allEvents {
-  box-shadow: 3px 3px 9px rgba(236, 234, 234, 0.892);
+  
   width: 90%;
   margin: 4%;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuS8ips5nXMUUyeJuilc4f4OVrdr2Y65kLmw&usqp=CAU');
   color: white;
-  border-right: 10px solid rgba(0, 0, 0, 0.555);
-  border-bottom: 10px solid rgba(0, 0, 0, 0.555);
+  border-left: 10px solid rgba(0, 0, 0, 0.555);
+  border-top: 10px solid rgba(0, 0, 0, 0.555);
 
 }
 
