@@ -21,10 +21,11 @@ function App() {
   const [ntrest, setNtrest] = useState([]);
   const [events, setEvents] = useState([]);
   const [event, setEvent] = useState([]);
-  const [eventsByPk, setEventsByPk] = useState([])
+  const [eventsByPk, setEventsByPk] = useState([]);
+  const [carts, setCarts] = useState([]);
 
   console.log(userProfile, "userProfile");
-  console.log(user, 'user')
+  console.log(user, "user");
 
   let userId = user.id;
 
@@ -55,12 +56,16 @@ function App() {
   };
 
   const selectedEventHandler = (selectedEvent) => {
-    setEvent(selectedEvent)
-  }
+    setEvent(selectedEvent);
+  };
 
   const setEventsByPkHandler = (eventsPk) => {
-    setEventsByPk(eventsPk)
-  }
+    setEventsByPk(eventsPk);
+  };
+
+  const SetAllCartsHandler = (allCarts) => {
+    setCarts(allCarts);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -72,13 +77,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar userProfile={userProfile}
-      user={user} />
+      <Navbar userProfile={userProfile} user={user} />
       <main>
         <div>
           <Routes>
             <Route
-              path='/'
+              path="/"
               element={
                 <Welcome
                   user={user}
@@ -130,41 +134,32 @@ function App() {
                 />
               }
             />
-            <Route 
-            path="event/:eventId"
-            element={
-              <EventDetails 
-                event={event}
-                selectedEventHandler={selectedEventHandler}
-              />
-            }
+            <Route
+              path="event/:eventId"
+              element={
+                <EventDetails
+                  event={event}
+                  selectedEventHandler={selectedEventHandler}
+                />
+              }
             />
-            <Route 
-            path="updateEvent/:eventId"
-            element={
-              <UpdateEvent 
-              />
-            }
+            <Route path="updateEvent/:eventId" element={<UpdateEvent />} />
+            <Route path="updateNtrest/:ntrestId" element={<UpdateNtrest />} />
+            <Route
+              path={`/mycart/${userId}`}
+              element={
+                <Cart
+                  SetAllCartsHandler={SetAllCartsHandler}
+                  carts={carts}
+                  setCarts={setCarts}
+                  user={user}
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                  setUserHandler={setUserHandler}
+                />
+              }
             />
-             <Route 
-            path="updateNtrest/:ntrestId"
-            element={
-              <UpdateNtrest 
-              />
-            }
-            />
-            <Route 
-            path="mycart"
-            element={
-              <Cart />
-            }
-            />
-            <Route 
-            path="profile"
-            element={
-              <Cart />
-            }
-            />
+            <Route path={`/profile/${userId}`} element={<Profile />} />
           </Routes>
         </div>
       </main>
