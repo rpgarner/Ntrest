@@ -13,7 +13,7 @@ const Ntrest = (props) => {
   let { ntrestId } = useParams();
   ntrestId = parseInt(ntrestId);
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const renderNtrest = async () => {
     const currentntrest = await GetNtrestDetails(ntrestId);
@@ -21,75 +21,84 @@ const Ntrest = (props) => {
   };
 
   const renderEventsByPk = async () => {
-      const currentEvents = await GetEventsByNtrestPk(ntrestId)
-      props.setEventsByPkHandler(currentEvents)
-  }
+    const currentEvents = await GetEventsByNtrestPk(ntrestId);
+    props.setEventsByPkHandler(currentEvents);
+  };
 
   useEffect(() => {
     renderNtrest();
-    renderEventsByPk()
+    renderEventsByPk();
   }, []);
 
   const navToUpdate = (eventId) => {
-    navigate(`/updateNtrest/${ntrestId}`)
-  }
+    navigate(`/updateNtrest/${ntrestId}`);
+  };
 
   const deleteNtrest = async (eventId) => {
-    await DeleteNtrest(eventId)
-    navigate("/feed")
-  }
+    await DeleteNtrest(eventId);
+    navigate("/feed");
+  };
 
   return (
-    <div >
+    <div>
       <div className="feed">
-      <div className="allEvents">
-        <div className="paper">
-        <h2 className="detailName">{props.ntrest.name}</h2>
-        <div className="paperDetails">
-        <div className="ntrest">
-        <h1 className="pin">.</h1> 
-        <h1 className="ntrestName">Fly Fishing</h1>
-        <img className="ntrest_img" src={props.ntrest.ntrest_img} alt="" />
+        <div className="allEvents">
+          <div className="paper">
+            <h2 className="detailName">{props.ntrest.name}</h2>
+            <div className="paperDetails">
+              <div className="ntrest">
+                <h1 className="pin">.</h1>
+                <h1 className="ntrestName">Fly Fishing</h1>
+                <img
+                  className="ntrest_img"
+                  src={props.ntrest.ntrest_img}
+                  alt=""
+                />
+              </div>
+              <div className="dets">
+                <p className="p">difficulty: {props.ntrest.difficulty}</p>
+                <p className="p">{props.ntrest.category}</p>
+                <p className="p">{props.ntrest.description}</p>
+              </div>
+            </div>
+            <div>
+              <button
+                className="register-btn"
+                onClick={() => navToUpdate(ntrestId)}
+              >
+                Update
+              </button>
+            </div>
+            <div>
+              <Link to="feed">
+                <button
+                  className="register-btn"
+                  onClick={() => deleteNtrest(ntrestId)}
+                >
+                  Delete
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="dets">
-        <p className="p">difficulty: {props.ntrest.difficulty}</p>
-        <p className="p">{props.ntrest.category}</p>
-        <p className="p">{props.ntrest.description}</p>
-        </div>
-        </div>
-      <div>
-      <button className="register-btn" onClick={() => navToUpdate(ntrestId)}>Update</button>
-      </div>
-      <div  >
-        <Link to="feed">
-          <button className="register-btn" onClick={() => deleteNtrest(ntrestId)}>Delete</button>
-        </Link>
-      </div>
-      </div>
-      </div>
       </div>
       <div className="feed">
-      <div className="allEvents">
+        <div className="allEvents">
           <h1 className="note">To Do</h1>
-          <div >
-            
-            <EventsByNtrest 
-                eventsByPk={props.eventsByPk}
-                
-            /> 
-      
-     
-      <div >
-          <AddEvent 
-            ntrest={props.ntrest}
-            user={props.user}
-            setUser={props.setUser}
-            setUserHandler={props.setUserHandler}
-            toggleAuthenticated={props.toggleAuthenticated}
-          /> 
-      </div>
-      </div>
-      </div>
+          <div>
+            <EventsByNtrest eventsByPk={props.eventsByPk} />
+
+            <div>
+              <AddEvent
+                ntrest={props.ntrest}
+                user={props.user}
+                setUser={props.setUser}
+                setUserHandler={props.setUserHandler}
+                toggleAuthenticated={props.toggleAuthenticated}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

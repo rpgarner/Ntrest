@@ -6,7 +6,7 @@ This is a full stack app where you create your interest, post activites, find ne
 Have you ever wanted to plan a trip and not know what to do, or wanted to try something new but need some how to and inspiration. Well Ntrest's goal is to be a place where you can get inspirations to try out new things, plan, and share your ntrests. Now you no longer need to get stumbed wondering what to do with your life now you just have to have to descover with Ntrest and say yes. 
 
 # Visit the page Here/ 
-https://ntrest-app.herokuapp.com/profile
+https://ntrest-app.herokuapp.com/
 
 ## Back end         
 Back end server was built seperate. You have visit the site here: https://ntrest-api.herokuapp.com/ and the repository here: https://github.com/rpgarner/Ntrest_Backend

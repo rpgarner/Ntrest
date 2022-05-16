@@ -24,7 +24,7 @@ const Login = (props) => {
   };
 
   return (
-    <div >
+    <div>
       <h2>Login </h2>
       <form className="login_form" onSubmit={submitData}>
         <input

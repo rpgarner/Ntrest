@@ -28,54 +28,54 @@ const Feed = (props) => {
   };
 
   const linkToEventDetail = (event) => {
-    navigate(`/event/${event.id}`)
-}
+    navigate(`/event/${event.id}`);
+  };
 
   return (
     <div>
-    <div className="feed">
-      <div className="allEvents">
-        <h1 className="note" >Ntrest</h1>
-        <div className="ntrests">
-        {props.ntrests.map((ntrest) => {
-          return (
-            <div className="ntrest" onClick={() => LinkToNtrestDetail(ntrest)}>
-              <Categories
-                ntrest={ntrest}
-                user={props.user}
-                setUser={props.setUser}
-                setUserHandler={props.setUserHandler}
-                toggleAuthenticated={props.toggleAuthenticated}
-              />
-              
-            </div>
-          );
-        })}
+      <div className="feed">
+        <div className="allEvents">
+          <h1 className="note">Ntrest</h1>
+          <div className="ntrests">
+            {props.ntrests.map((ntrest) => {
+              return (
+                <div
+                  className="ntrest"
+                  onClick={() => LinkToNtrestDetail(ntrest)}
+                >
+                  <Categories
+                    ntrest={ntrest}
+                    user={props.user}
+                    setUser={props.setUser}
+                    setUserHandler={props.setUserHandler}
+                    toggleAuthenticated={props.toggleAuthenticated}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <CreateNtrest user={props.user} />
         </div>
-            <CreateNtrest user={props.user} />
-            </div>
       </div>
       <div className="feed">
-      <div
-      className="allEvents">
-        <h1 className="note">All Events</h1>
-        <div className="ntrests">
-        {props.events.map((event) => (
-          <div className="ntrest"  onClick={() => linkToEventDetail(event)}>
-            <Events
-              event={event}
-              user={props.user}
-              setUser={props.setUser}
-              setUserHandler={props.setUserHandler}
-              toggleAuthenticated={props.toggleAuthenticated}
-            />
+        <div className="allEvents">
+          <h1 className="note">All Events</h1>
+          <div className="ntrests">
+            {props.events.map((event) => (
+              <div className="ntrest" onClick={() => linkToEventDetail(event)}>
+                <Events
+                  event={event}
+                  user={props.user}
+                  setUser={props.setUser}
+                  setUserHandler={props.setUserHandler}
+                  toggleAuthenticated={props.toggleAuthenticated}
+                />
+              </div>
+            ))}
           </div>
-        ))}
         </div>
       </div>
-      </div>
     </div>
-   
   );
 };
 
