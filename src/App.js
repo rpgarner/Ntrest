@@ -77,7 +77,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar userProfile={userProfile} user={user} />
+      <Navbar
+        userProfile={userProfile}
+        user={user}
+        setUser={setUser}
+        toggleAuthenticated={toggleAuthenticated}
+      />
       <main>
         <div>
           <Routes>
