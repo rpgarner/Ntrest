@@ -3,7 +3,6 @@ import Client from "./api";
 export const GetAllNtrests = async () => {
     try {
         const res = await Client.get('api/ntrest/ntrest')
-        console.log(res, 'get all ntrest')
         return res.data
       } catch (error) {
         throw error
@@ -13,7 +12,6 @@ export const GetAllNtrests = async () => {
 export const GetNtrestDetails = async (id) => {
     try {
         const res = await Client.get(`api/ntrest/${id}`)
-        console.log(res, 'ntrest details')
         return res.data
     } catch (error) {
         throw error
@@ -32,7 +30,6 @@ export const AddNtrest = async (userId, data) => {
 export const UpdatedNtrest = async (ntrestId, data) => {
     try{
         const res = await Client.put(`api/ntrest/${ntrestId}`, data)
-        console.log(res, "updated ntrest")
         return res.data
     } catch (error) {
         throw error

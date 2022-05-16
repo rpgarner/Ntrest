@@ -4,7 +4,6 @@ import Client from "./api";
 export const GetEvent_ListByuserPk = async (userId) => {
     try {
       const res = await Client.get(`api/Event_list/${userId}`);
-      console.log(res, 'cat by userid')
       return res.data;
     } catch (error) {
       throw error;

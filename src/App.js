@@ -24,9 +24,7 @@ function App() {
   const [eventsByPk, setEventsByPk] = useState([]);
   const [carts, setCarts] = useState([]);
 
-  console.log(userProfile, "userProfile");
-  console.log(user, "user");
-
+ 
   let userId = user.id;
 
   const checkToken = async () => {

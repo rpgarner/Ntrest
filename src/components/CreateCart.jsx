@@ -10,7 +10,6 @@ const CreateCart = (props) => {
     });
     
     let userId = props.user.id;
-    console.log(userId, 'userId')
     
     const handleCart = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });

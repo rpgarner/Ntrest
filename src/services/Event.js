@@ -3,7 +3,6 @@ import Client from "./api";
 export const GetAllEvents = async () => {
     try {
         const res = await Client.get('api/event/recent')
-        console.log(res, 'get all Events')
         return res.data
       } catch (error) {
         throw error
@@ -13,7 +12,6 @@ export const GetAllEvents = async () => {
 export const GetEventDetails = async (id) => {
     try {
         const res = await Client.get(`api/event/${id}`)
-        console.log(res, 'event details')
         return res.data
     } catch (error) {
         throw error
@@ -24,7 +22,6 @@ export const GetEventDetails = async (id) => {
 export const GetEventsByNtrestPk = async (ntrestId) => {
     try {
       const res = await Client.get(`api/event/ntrest/${ntrestId}`);
-      console.log(res, 'events by ntrest')
       return res.data;
     } catch (error) {
       throw error;
@@ -43,7 +40,6 @@ export const CreateEvent = async (userId, ntrestId, data) => {
 export const Updatedevent = async (eventId, data) => {
     try{
         const res = await Client.put(`api/event/${eventId}`, data)
-        console.log(res, "updated event")
         return res.data
     } catch (error) {
         throw error

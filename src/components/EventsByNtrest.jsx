@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 
 
 const EventsByNtrest = (props) => {
-    console.log(props.eventsByPk, 'yuy')
 
     let navigate = useNavigate()
 
